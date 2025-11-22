@@ -1,4 +1,4 @@
-package dev.higurashi.example_mod;
+package dev.higurashi.spellbound_nexus;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,12 +13,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(Example_mod.MOD_ID)
-public class Example_mod {
-    public static final String MOD_ID = "example_mod";
+@Mod(SpellboundNexus.MOD_ID)
+public class SpellboundNexus {
+    public static final String MOD_ID = "spellbound_nexus";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public Example_mod() {
+    public SpellboundNexus() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
