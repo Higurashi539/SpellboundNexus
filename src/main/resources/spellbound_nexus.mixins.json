@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.higurashi.spellbound_nexus.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "example_mod.refmap.json",
+  "refmap": "spellbound_nexus.refmap.json",
   "mixins": [
   ],
   "client": [
