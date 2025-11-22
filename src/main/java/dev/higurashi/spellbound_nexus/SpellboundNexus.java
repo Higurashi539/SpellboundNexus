@@ -1,6 +1,7 @@
 package dev.higurashi.spellbound_nexus;
 
 import com.mojang.logging.LogUtils;
+import dev.higurashi.spellbound_nexus.api.init.AttributeRegistry;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,6 +23,8 @@ public class SpellboundNexus {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
+
+        AttributeRegistry.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
