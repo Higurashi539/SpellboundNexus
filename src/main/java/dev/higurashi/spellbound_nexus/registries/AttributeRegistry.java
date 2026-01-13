@@ -1,7 +1,6 @@
-package dev.higurashi.spellbound_nexus.api.init;
+package dev.higurashi.spellbound_nexus.registries;
 
 import dev.higurashi.spellbound_nexus.SpellboundNexus;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
