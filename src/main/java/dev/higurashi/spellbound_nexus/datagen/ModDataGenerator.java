@@ -1,6 +1,9 @@
 package dev.higurashi.spellbound_nexus.datagen;
 
 import dev.higurashi.spellbound_nexus.datagen.client.lang.EnUsLanguageProvider;
+import dev.higurashi.spellbound_nexus.datagen.client.lang.JaJpLanguageProvider;
+import dev.higurashi.spellbound_nexus.datagen.server.ModBlockTagsProvider;
+import dev.higurashi.spellbound_nexus.datagen.server.ModItemTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -21,8 +24,12 @@ public class ModDataGenerator {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
-//      generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        // === Server ===
+        ModBlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(), new ModBlockTagsProvider(packOutput, provider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, provider, blockTagsProvider.contentsGetter(),existingFileHelper));
 
+        // === Client ===
         generator.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput, Locale.US.toString().toLowerCase()));
+        generator.addProvider(event.includeClient(), new JaJpLanguageProvider(packOutput, Locale.JAPAN.toString().toLowerCase()));
     }
 }
