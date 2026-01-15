@@ -1,9 +1,10 @@
 package dev.higurashi.spellbound_nexus.datagen.client.lang;
 
-import dev.higurashi.spellbound_nexus.registries.AttributeRegistry;
+import dev.higurashi.spellbound_nexus.registry.AttributeRegistry;
+import dev.higurashi.spellbound_nexus.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 
-public class JaJpLanguageProvider extends ModLanguageProvider {
+public class JaJpLanguageProvider extends BaseLanguageProvider {
     public JaJpLanguageProvider(PackOutput output, String locale) {
         super(output, locale);
     }
@@ -13,5 +14,8 @@ public class JaJpLanguageProvider extends ModLanguageProvider {
         // === Attribute ===
         addAttribute(AttributeRegistry.MAX_MANA, "最大マナ");
         addAttribute(AttributeRegistry.MANA_REGEN, "マナ回復速度");
+
+        // === Item ===
+        addItem(ItemRegistry.WOODEN_WAND, "木製魔法杖");
     }
 }

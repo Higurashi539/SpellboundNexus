@@ -7,8 +7,8 @@ import net.minecraftforge.common.data.LanguageProvider;
 
 import java.util.function.Supplier;
 
-public class ModLanguageProvider extends LanguageProvider {
-    public ModLanguageProvider(PackOutput output, String locale) {
+public class BaseLanguageProvider extends LanguageProvider {
+    public BaseLanguageProvider(PackOutput output, String locale) {
         super(output, SpellboundNexus.MOD_ID, locale);
     }
 

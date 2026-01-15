@@ -1,0 +1,12 @@
+package dev.higurashi.spellbound_nexus.registry;
+
+import dev.higurashi.spellbound_nexus.SpellboundNexus;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+
+public class EffectRegistry {
+    private static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, SpellboundNexus.MOD_ID);
+    public static void register(IEventBus eventBus) { MOB_EFFECTS.register(eventBus); }
+}

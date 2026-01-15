@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "spellbound_nexus:item/wand/stick/oak",
+    "layer1": "spellbound_nexus:item/wand/gem/ruby",
+    "layer2": "spellbound_nexus:item/wand/grip/iron"
+  }
+}

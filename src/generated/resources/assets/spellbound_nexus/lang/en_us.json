@@ -1,4 +1,5 @@
 {
   "attribute.spellbound_nexus.mana_regen": "Mana Regen Speed",
-  "attribute.spellbound_nexus.max_mana": "Max Mana"
+  "attribute.spellbound_nexus.max_mana": "Max Mana",
+  "item.spellbound_nexus.wooden_wand": "Wooden Wand"
 }

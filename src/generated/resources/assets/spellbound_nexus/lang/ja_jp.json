@@ -1,4 +1,5 @@
 {
   "attribute.spellbound_nexus.mana_regen": "マナ回復速度",
-  "attribute.spellbound_nexus.max_mana": "最大マナ"
+  "attribute.spellbound_nexus.max_mana": "最大マナ",
+  "item.spellbound_nexus.wooden_wand": "木製魔法杖"
 }
