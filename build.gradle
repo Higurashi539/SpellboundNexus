@@ -99,6 +99,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     runtimeOnly fg.deobf("curse.maven:modernfix-790626:7200213")
     runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
+    runtimeOnly fg.deobf("curse.maven:nbtedit-reborn-678133:5984630")
 }
 
 tasks.named('processResources', ProcessResources).configure {
