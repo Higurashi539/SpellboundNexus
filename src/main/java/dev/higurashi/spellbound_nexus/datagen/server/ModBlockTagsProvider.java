@@ -3,12 +3,13 @@ package dev.higurashi.spellbound_nexus.datagen.server;
 import dev.higurashi.spellbound_nexus.SpellboundNexus;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BlockTagsProvider extends net.minecraftforge.common.data.BlockTagsProvider {
-    public BlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+public class ModBlockTagsProvider extends BlockTagsProvider {
+    public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, SpellboundNexus.MOD_ID, existingFileHelper);
     }
 

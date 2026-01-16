@@ -17,5 +17,8 @@ public class EnUsLanguageProvider extends BaseLanguageProvider {
 
         // === Item ===
         addItem(ItemRegistry.WOODEN_WAND, "Wooden Wand");
+
+        // === Tooltip ===
+
     }
 }
