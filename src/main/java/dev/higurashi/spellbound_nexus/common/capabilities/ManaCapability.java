@@ -3,7 +3,7 @@ package dev.higurashi.spellbound_nexus.common.capabilities;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 
-public class ManaCapability implements IManaCap {
+public class ManaCapability implements IManaCapability {
     float mana;
     float maxMana;
     LivingEntity entity;

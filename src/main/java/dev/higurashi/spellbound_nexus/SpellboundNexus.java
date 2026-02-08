@@ -3,9 +3,7 @@ package dev.higurashi.spellbound_nexus;
 import com.mojang.logging.LogUtils;
 import dev.higurashi.spellbound_nexus.config.ClientConfig;
 import dev.higurashi.spellbound_nexus.config.CommonConfig;
-import dev.higurashi.spellbound_nexus.registry.AttributeRegistry;
-import dev.higurashi.spellbound_nexus.registry.EffectRegistry;
-import dev.higurashi.spellbound_nexus.registry.ItemRegistry;
+import dev.higurashi.spellbound_nexus.registries.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -32,6 +30,7 @@ public class SpellboundNexus {
 
         // === Registry ===
         AttributeRegistry.register(modEventBus);
+        BlockRegistry.register(modEventBus);
         EffectRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
 
