@@ -27,6 +27,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     public ItemModelBuilder handheldItem(ResourceLocation item) {
-        return getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("item/handheld")).texture("layer0", new ResourceLocation(item.getNamespace(), "item/" + item.getPath()));
+        return getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("item/handheld")).texture("layer0", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "item/" + item.getPath()));
     }
 }

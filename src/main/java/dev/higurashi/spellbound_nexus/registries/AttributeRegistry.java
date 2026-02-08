@@ -1,4 +1,4 @@
-package dev.higurashi.spellbound_nexus.registry;
+package dev.higurashi.spellbound_nexus.registries;
 
 import dev.higurashi.spellbound_nexus.SpellboundNexus;
 import net.minecraft.world.entity.ai.attributes.Attribute;
