@@ -4,10 +4,7 @@ import com.mojang.logging.LogUtils;
 import dev.higurashi.spellbound_nexus.common.network.PacketHandler;
 import dev.higurashi.spellbound_nexus.config.ClientConfig;
 import dev.higurashi.spellbound_nexus.config.CommonConfig;
-import dev.higurashi.spellbound_nexus.registries.AttributeRegistry;
-import dev.higurashi.spellbound_nexus.registries.BlockRegistry;
-import dev.higurashi.spellbound_nexus.registries.EffectRegistry;
-import dev.higurashi.spellbound_nexus.registries.ItemRegistry;
+import dev.higurashi.spellbound_nexus.registries.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -39,6 +36,7 @@ public class SpellboundNexus {
         BlockRegistry.register(modEventBus);
         EffectRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
+        SpellRegistry.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
