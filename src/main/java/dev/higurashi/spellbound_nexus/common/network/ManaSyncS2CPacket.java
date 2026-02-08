@@ -1,4 +1,4 @@
-package dev.higurashi.spellbound_nexus.common.client;
+package dev.higurashi.spellbound_nexus.common.network;
 
 import dev.higurashi.spellbound_nexus.registries.CapabilityRegistry;
 import net.minecraft.client.Minecraft;
@@ -10,6 +10,10 @@ import java.util.function.Supplier;
 
 public class ManaSyncS2CPacket {
     private float mana;
+
+    public ManaSyncS2CPacket(float mana) {
+        this.mana = mana;
+    }
 
     public ManaSyncS2CPacket(FriendlyByteBuf buf) {
         this.mana = buf.readFloat();

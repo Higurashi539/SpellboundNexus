@@ -1,9 +1,13 @@
 package dev.higurashi.spellbound_nexus;
 
 import com.mojang.logging.LogUtils;
+import dev.higurashi.spellbound_nexus.common.network.PacketHandler;
 import dev.higurashi.spellbound_nexus.config.ClientConfig;
 import dev.higurashi.spellbound_nexus.config.CommonConfig;
-import dev.higurashi.spellbound_nexus.registries.*;
+import dev.higurashi.spellbound_nexus.registries.AttributeRegistry;
+import dev.higurashi.spellbound_nexus.registries.BlockRegistry;
+import dev.higurashi.spellbound_nexus.registries.EffectRegistry;
+import dev.higurashi.spellbound_nexus.registries.ItemRegistry;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -27,6 +31,8 @@ public class SpellboundNexus {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
+
+        PacketHandler.register();
 
         // === Registry ===
         AttributeRegistry.register(modEventBus);

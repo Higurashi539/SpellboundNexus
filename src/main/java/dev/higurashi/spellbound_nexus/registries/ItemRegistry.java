@@ -1,7 +1,7 @@
 package dev.higurashi.spellbound_nexus.registries;
 
 import dev.higurashi.spellbound_nexus.SpellboundNexus;
-import dev.higurashi.spellbound_nexus.item.WandItem;
+import dev.higurashi.spellbound_nexus.common.item.WandItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

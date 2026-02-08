@@ -3,15 +3,22 @@ package dev.higurashi.spellbound_nexus.common.capabilities;
 import dev.higurashi.spellbound_nexus.registries.CapabilityRegistry;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
-import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ManaCapabilityProvider implements ICapabilitySerializable<CompoundTag> {
-    private final LazyOptional<IManaCapability> optionalData = LazyOptional.of(() -> new ManaCapability(null));
+    private final ManaCapability instance;
+    private final LazyOptional<IManaCapability> optionalData;
+
+    public ManaCapabilityProvider(LivingEntity entity) {
+        this.instance = new ManaCapability(entity);
+        this.optionalData = LazyOptional.of(() -> instance);
+    }
+
 
     @NotNull
     @Override
@@ -21,11 +28,11 @@ public class ManaCapabilityProvider implements ICapabilitySerializable<CompoundT
 
     @Override
     public CompoundTag serializeNBT() {
-        return optionalData.map(INBTSerializable::serializeNBT).orElse(new CompoundTag());
+        return instance.serializeNBT();
     }
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
-        optionalData.ifPresent(cap -> cap.deserializeNBT(nbt));
+        instance.deserializeNBT(nbt);
     }
 }

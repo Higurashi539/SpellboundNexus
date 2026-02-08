@@ -1,17 +1,16 @@
 package dev.higurashi.spellbound_nexus.common.capabilities;
 
+import dev.higurashi.spellbound_nexus.registries.AttributeRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 
 public class ManaCapability implements IManaCapability {
     float mana;
-    float maxMana;
     LivingEntity entity;
 
     public ManaCapability(LivingEntity entity) {
-        this.mana = 0;
-        this.maxMana = 100;
         this.entity = entity;
+        this.mana = 0;
     }
 
     @Override
@@ -21,30 +20,24 @@ public class ManaCapability implements IManaCapability {
 
     @Override
     public void setMana(float value) {
-        this.mana = Math.max(0, Math.min(value, this.maxMana));
+        this.mana = Math.max(0, Math.min(value, getMaxMana()));
     }
 
     @Override
     public float getMaxMana() {
-        return maxMana;
-    }
-
-    @Override
-    public void setMaxMana(float value) {
-        this.maxMana = Math.max(0, value);
+        if (entity == null) return 0.0f;
+        return (float) entity.getAttributeValue(AttributeRegistry.MAX_MANA.get());
     }
 
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putFloat("mana", getMana());
-        tag.putFloat("max_mana", getMaxMana());
         return tag;
     }
 
     @Override
     public void deserializeNBT(CompoundTag tag) {
-        setMana(tag.getFloat("mana"));
-        setMaxMana(tag.getFloat("max_mana"));
+        this.mana = tag.getFloat("mana");
     }
 }

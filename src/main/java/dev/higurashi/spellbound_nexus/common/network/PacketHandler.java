@@ -1,4 +1,4 @@
-package dev.higurashi.spellbound_nexus.common.client;
+package dev.higurashi.spellbound_nexus.common.network;
 
 import dev.higurashi.spellbound_nexus.SpellboundNexus;
 import net.minecraft.resources.ResourceLocation;

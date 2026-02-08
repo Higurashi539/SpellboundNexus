@@ -7,5 +7,4 @@ public interface IManaCapability extends INBTSerializable<CompoundTag> {
     float getMana();
     void setMana(float value);
     float getMaxMana();
-    void setMaxMana(float value);
 }
